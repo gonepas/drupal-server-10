@@ -79,3 +79,6 @@ local.*
 # Ignore system files
 .DS_Store
 Thumbs.db
+
+# Ignore system deploy script
+deploy.sh
