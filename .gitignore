@@ -22,6 +22,12 @@
 /web/sites/*/tmp
 /web/sites/*/cache
 
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+*.log
+
 # Ignore drupal core (if not versioning drupal sources)
 /web/vendor
 /web/core
@@ -50,6 +56,13 @@
 /web/robots.txt
 /web/update.php
 /web/web.config
+
+# Vendor dependencies
+/vendor/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
 
 # Ignore vendor dependencies and scripts
 /vendor
@@ -82,3 +95,26 @@ Thumbs.db
 
 # Ignore system deploy script
 deploy.sh
+
+# Cache files
+/web/sites/*/cache/
+/web/sites/*/files/css/
+/web/sites/*/files/js/
+/web/sites/*/files/php/
+/web/sites/*/files/styles/
+
+# Package managers
+/node_modules/
+/bower_components/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+*~
