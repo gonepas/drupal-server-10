@@ -88,7 +88,6 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pul
 ## Support
 For support, please contact [contact information or process].
 Email me at: gonepas18@gmail.com
-OK OK
 
 ## License
 [Your license information]
