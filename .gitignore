@@ -118,3 +118,13 @@ yarn.lock
 *.swp
 *.swo
 *~
+
+# Radix theme specific
+node_modules/
+npm-debug.log
+web/themes/custom/clinkz_theme/css/
+web/themes/custom/clinkz_theme/assets/
+web/themes/custom/clinkz_theme/build/
+.sass-cache/
+*.css.map
+*.js.map
