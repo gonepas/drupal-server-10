@@ -1,0 +1,15 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Homepage
+status: experimental
+description: 'Homepage component with Lottie animation'
+props:
+  title:
+    type: string
+    required: true
+  description:
+    type: string
+    required: true
+  social_links:
+    type: array
+    description: Array of social media links
+    required: false

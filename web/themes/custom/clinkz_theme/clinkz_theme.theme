@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Theme functions.
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.theme';
+foreach (glob($includes_path) as $file) {
+  require_once dirname(__FILE__) . '/includes/' . basename($file);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for homepage.html.twig.
+ */
+function clinkz_theme_preprocess_homepage(&$variables) {
+  // Add theme path to variables
+  $variables['base_path'] = base_path();
+  $variables['directory'] = drupal_get_path('theme', 'clinkz_theme');
+}

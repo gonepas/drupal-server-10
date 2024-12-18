@@ -1,0 +1,42 @@
+{#
+/**
+* @file
+* Template for homepage component.
+*/
+#}
+{# templates/homepage/homepage.html.twig #}
+<div class="homepage-wrapper">
+  <div class="homepage-header">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+
+    {# Add Lottie animation container #}
+    <div class="lottie-animation-wrapper">
+      <div class="lottie-animation"
+           data-animation-path="{{ base_path ~ directory }}/src/assets/lotties/animation2.json"
+           data-loop="true"
+           data-autoplay="true">
+      </div>
+    </div>
+
+    {% if description %}
+      <div class="description">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if social_links %}
+    <div class="social-links">
+      {% for link in social_links %}
+        <a href="{{ link.url }}"
+           class="social-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          {{ link.label }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

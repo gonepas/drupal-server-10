@@ -1,0 +1,65 @@
+@import "../../src/scss/init";
+// Import tools from radix
+@import "../../src/scss/base/variables";
+
+.homepage {
+  min-height: 100vh;
+  background-color: var(--bs-body-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacer);
+
+  &__container {
+    max-width: var(--max-width);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__animation {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto var(--spacer-2);
+
+    #lottie-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    margin-top: var(--spacer-3);
+  }
+
+  &__title {
+    font-size: var(--font-size-display-4);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacer);
+    color: var(--bs-heading-color);
+  }
+
+  &__description {
+    font-size: var(--font-size-lg);
+    color: var(--bs-secondary-color);
+    margin-bottom: var(--spacer-3);
+  }
+
+  &__social {
+    display: flex;
+    gap: var(--spacer-3);
+    justify-content: center;
+    margin-top: var(--spacer-3);
+  }
+
+  &__social-link {
+    color: var(--bs-link-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: var(--bs-link-hover-color);
+    }
+  }
+}

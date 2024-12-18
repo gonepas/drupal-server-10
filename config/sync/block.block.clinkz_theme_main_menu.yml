@@ -1,0 +1,27 @@
+uuid: 9ebb34ca-4f1e-4d8f-825f-e3bf952eb8d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: vUr89HKzqwnvFQC22-wMh05kQpjS3Bs7z1MRLA1wOz0
+id: clinkz_theme_main_menu
+theme: clinkz_theme
+region: navbar_left
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

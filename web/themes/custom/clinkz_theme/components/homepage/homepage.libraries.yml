@@ -1,0 +1,11 @@
+homepage:
+  css:
+    component:
+      css/homepage.css: {}
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js: { type: external }
+    js/homepage.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

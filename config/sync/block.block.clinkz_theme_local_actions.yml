@@ -1,0 +1,20 @@
+uuid: 8340d25a-5382-42c2-b81c-8274ea71c15d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: TaMIuuw8uu_ZkckPpQNVDtkVK477jQDbIDDCN3gEaUo
+id: clinkz_theme_local_actions
+theme: clinkz_theme
+region: header
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

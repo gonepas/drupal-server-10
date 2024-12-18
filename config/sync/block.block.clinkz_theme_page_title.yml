@@ -1,0 +1,20 @@
+uuid: e2bc895c-9555-49f5-8b2c-1b5e88b5f2ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: BsnKG0GvdgNj-PJEnzTUQ6-VP-jv62nbESUdhdmOiSk
+id: clinkz_theme_page_title
+theme: clinkz_theme
+region: header
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

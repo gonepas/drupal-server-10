@@ -1,0 +1,22 @@
+uuid: d6756ad5-8f76-444e-8f6e-b86939ace9b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: tjSpE1VJgH7ijs18_uKS4A8z5I3a6W8Ze3-Q9q5jYSk
+id: clinkz_theme_content
+theme: clinkz_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

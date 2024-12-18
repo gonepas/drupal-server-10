@@ -1,0 +1,39 @@
+name: Clinkz Theme
+description: ''
+screenshot: screenshot.png
+'alt text': 'clinkz_theme theme screenshot'
+core_version_requirement: ^10
+version: 1.0.0
+engine: twig
+type: theme
+'base theme': radix
+starterkit: true
+dependencies:
+  - 'drupal:serialization'
+  - 'drupal:jquery'
+'interface translation project': clinkz_theme
+'interface translation server pattern': themes/custom/clinkz_theme/translations/%language.po
+regions:
+  navbar_branding: 'Navbar branding'
+  navbar_left: 'Navbar left'
+  navbar_right: 'Navbar right'
+  header: Header
+  content: Content
+  page_bottom: 'Page bottom'
+  footer: Footer
+libraries:
+  - clinkz_theme/global
+ckeditor5-stylesheets:
+  - build/css/main.style.css
+libraries-extend:
+  core/drupal.ajax:
+    - clinkz_theme/drupal.ajax
+  core/drupal.checkbox:
+    - clinkz_theme/drupal.checkbox
+  core/drupal.message:
+    - clinkz_theme/drupal.message
+  core/drupal.progress:
+    - clinkz_theme/drupal.progress
+  clientside_validation_jquery/cv.jquery.validate:
+    - clinkz_theme/jquery.validate
+generator: 'radix_starterkit:1.0.0'

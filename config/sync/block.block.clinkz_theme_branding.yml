@@ -1,0 +1,25 @@
+uuid: 7a7e3f4e-e66b-4158-a443-be78d883e0cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: 6iJOSBvb9GzOBut645qUGgmQHnpV-Ouuw9ZpAo4KAYI
+id: clinkz_theme_branding
+theme: clinkz_theme
+region: navbar_branding
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: f9adbb45-e3f2-47a0-88bf-c27ef72f8bd1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - clinkz_theme
+_core:
+  default_config_hash: 9J5o7rmnz5CQ3i6N8Pucfs7Jdb5dihAkOA5M5dTI2F4
+id: clinkz_theme_breadcrumbs
+theme: clinkz_theme
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,33 @@
+// Bootstrap
+// -----------------------------------------------------------------------------
+@import 'init';
+@import 'bootstrap';
+
+// Include any custom stylesheets here
+// -----------------------------------------------------------------------------
+@import "base/elements";
+@import "base/functions";
+@import "base/helpers";
+@import "base/typography";
+
+/* Lottie animation styles */
+.lottie-animation-wrapper {
+  width: 100%;
+  max-width: 400px; /* Adjust based on your needs */
+  margin: 2rem auto;
+}
+
+.lottie-animation {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Maintains aspect ratio */
+  position: relative;
+}
+
+.lottie-animation svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
