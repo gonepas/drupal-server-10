@@ -4,7 +4,6 @@ global:
       build/css/main.style.css: {}
   js:
     build/js/main.script.js: {}
-    build/js/loadLotties.script.js: {}
     https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js: { type: external, minified: true }
   dependencies:
     - core/drupal
