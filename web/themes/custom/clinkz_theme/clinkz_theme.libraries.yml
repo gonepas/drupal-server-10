@@ -8,8 +8,6 @@ global:
     https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js: { type: external, minified: true }
   dependencies:
     - core/drupal
-    - core/jquery
-    - core/once
 
 drupal.ajax:
   js:
