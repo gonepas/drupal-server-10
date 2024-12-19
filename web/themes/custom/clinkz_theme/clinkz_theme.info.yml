@@ -10,7 +10,6 @@ type: theme
 starterkit: true
 dependencies:
   - 'drupal:serialization'
-  - 'drupal:jquery'
 'interface translation project': clinkz_theme
 'interface translation server pattern': themes/custom/clinkz_theme/translations/%language.po
 regions:
