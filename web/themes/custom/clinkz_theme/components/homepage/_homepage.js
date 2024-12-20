@@ -3,13 +3,12 @@
 
   Drupal.behaviors.homepage = {
     attach: (context, settings) => {
-      // Initialize Lottie animations
+      // Initialize Lottie animations with improved performance
       const elements = document.querySelectorAll('.lottie-animation');
-      console.log("asdhkaghsdgasjhd");
 
       // Intersection Observer for lazy loading
       const observerCallback = (entries) => {
-        for (const entry of entries) {
+        entries.forEach(entry => {
           if (entry.isIntersecting && !entry.target.hasAttribute('data-processed')) {
             const element = entry.target;
             const animationPath = element.getAttribute('data-animation-path');
@@ -25,32 +24,38 @@
                 path: animationPath,
                 rendererSettings: {
                   progressiveLoad: true,
-                  preserveAspectRatio: 'xMidYMid slice'
+                  preserveAspectRatio: 'xMidYMid cover', // Changed to cover
+                  clearCanvas: true,
                 }
               });
 
+              // Performance optimizations
+              animation.setSubframe(false);
+
+              // Add smooth loading transition
+              animation.addEventListener('DOMLoaded', () => {
+                element.style.opacity = '0';
+                setTimeout(() => {
+                  element.style.transition = 'opacity 0.5s ease-in';
+                  element.style.opacity = '1';
+                }, 100);
+              });
+
               // Error handling
-              animation.addEventListener('error', (error) => {
+              animation.addEventListener('error', error => {
                 console.error('Lottie animation error:', error);
                 element.innerHTML = 'Animation failed to load';
               });
 
-              // Loading handling
-              animation.addEventListener('DOMLoaded', () => {
-                element.classList.add('animation-loaded');
-              });
-
-              // Add data-processed attribute to prevent re-initialization
               element.setAttribute('data-processed', 'true');
             } catch (error) {
               console.error('Failed to initialize Lottie animation:', error);
-              element.innerHTML = 'Animation initialization failed';
             }
           }
-        }
+        });
       };
 
-      // Create and configure the observer
+      // Create and configure the observer with improved options
       const observerOptions = {
         root: null,
         rootMargin: '50px',
@@ -59,33 +64,41 @@
 
       const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-      // Observe all Lottie animation elements
-      for (const element of elements) {
+      elements.forEach(element => {
         observer.observe(element);
-      }
+      });
 
-      // Cleanup function for when elements are removed
-      const cleanup = () => {
-        for (const element of elements) {
+      // Add smooth scroll behavior
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add cursor effects (optional)
+      const cursor = document.createElement('div');
+      cursor.className = 'custom-cursor';
+      document.body.appendChild(cursor);
+
+      document.addEventListener('mousemove', e => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+
+      return () => {
+        elements.forEach(element => {
           if (element.hasAttribute('data-processed')) {
             observer.unobserve(element);
           }
-        }
+        });
+        document.body.removeChild(cursor);
       };
-
-      // Add cleanup to Drupal's behaviors detach
-      return cleanup;
-    },
-
-    detach: (context, settings, trigger) => {
-      if (trigger === 'unload') {
-        const elements = context.querySelectorAll('.lottie-animation');
-        for (const element of elements) {
-          if (element.hasAttribute('data-processed')) {
-            element.removeAttribute('data-processed');
-          }
-        }
-      }
     }
   };
 })(jQuery, Drupal);

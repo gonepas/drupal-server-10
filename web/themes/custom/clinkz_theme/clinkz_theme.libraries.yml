@@ -1,6 +1,7 @@
 global:
   css:
     theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css: { type: external, minified: true }
       build/css/main.style.css: {}
   js:
     build/js/main.script.js: {}

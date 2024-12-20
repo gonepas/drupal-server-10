@@ -2,64 +2,159 @@
 // Import tools from radix
 @import "../../src/scss/base/variables";
 
+// Homepage styles
 .homepage {
+  position: relative;
   min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
   background-color: var(--bs-body-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacer);
+  color: var(--bs-body-color);
 
-  &__container {
-    max-width: var(--max-width);
+  // Background animation
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-  }
+    height: 100vh;
+    z-index: 1;
 
-  &__animation {
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    margin: 0 auto var(--spacer-2);
-
-    #lottie-container {
+    .lottie-animation {
       width: 100%;
       height: 100%;
+      opacity: 0.6; // Adjust for better text readability
     }
   }
 
+  // Main container
+  &__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  // Content wrapper
   &__content {
-    margin-top: var(--spacer-3);
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    animation: fadeIn 1s ease-out;
   }
 
+  // Title styles
   &__title {
-    font-size: var(--font-size-display-4);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacer);
-    color: var(--bs-heading-color);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+
+    &-line {
+      display: block;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUp 0.8s ease-out forwards;
+
+      &--accent {
+        color: var(--bs-primary);
+        animation-delay: 0.2s;
+      }
+
+      & + & {
+        margin-top: 0.5rem;
+      }
+    }
   }
 
+  // Description styles
   &__description {
-    font-size: var(--font-size-lg);
-    color: var(--bs-secondary-color);
-    margin-bottom: var(--spacer-3);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
   }
 
+  // Social links
   &__social {
     display: flex;
-    gap: var(--spacer-3);
-    justify-content: center;
-    margin-top: var(--spacer-3);
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
   }
 
   &__social-link {
-    color: var(--bs-link-color);
-    text-decoration: none;
-    font-size: var(--font-size-base);
-    transition: color var(--transition-base);
+    color: var(--bs-body-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 
     &:hover {
-      color: var(--bs-link-hover-color);
+      color: var(--bs-primary);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Dark mode support
+[data-bs-theme="dark"] {
+  .homepage {
+    &__background {
+      .lottie-animation {
+        opacity: 0.4; // Slightly more transparent in dark mode
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .homepage {
+    &__container {
+      padding: 1.5rem;
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    &__description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__social {
+      justify-content: center;
     }
   }
 }
