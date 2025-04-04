@@ -1,0 +1,22 @@
+uuid: 879788fe-c5f4-44da-9d99-4b8fce59ba2d
+langcode: en
+status: true
+dependencies: {  }
+id: api_logged_in
+name: api_logged_in
+description: 'Scope for logged in users'
+grant_types:
+  refresh_token:
+    status: true
+    description: ''
+  authorization_code:
+    status: true
+    description: ''
+  client_credentials:
+    status: true
+    description: ''
+umbrella: false
+parent: _none
+granularity_id: role
+granularity_configuration:
+  role: authenticated

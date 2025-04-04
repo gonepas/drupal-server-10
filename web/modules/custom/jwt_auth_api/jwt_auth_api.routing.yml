@@ -1,0 +1,53 @@
+jwt_auth_api.login:
+  path: '/api/auth/login'
+  defaults:
+    _controller: '\Drupal\jwt_auth_api\Controller\JwtAuthController::login'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+jwt_auth_api.refresh:
+  path: '/api/auth/refresh'
+  defaults:
+    _title: 'Jwt token refresh'
+    _controller: '\Drupal\jwt_auth_api\Controller\JwtAuthController::refresh'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+jwt_auth_api.user_info:
+  path: '/api/user/info'
+  defaults:
+    _controller: '\Drupal\jwt_auth_api\Controller\UserController::info'
+  methods: [GET]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    _auth: ['jwt_auth_api']
+
+
+jwt_auth_api.postTest:
+  path: '/api/auth/test'
+  defaults:
+    _title: 'Jwt token test'
+    _controller: '\Drupal\jwt_auth_api\Controller\JwtAuthController::posttest'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+jwt_auth_api.test.post:
+  path: '/jwt-auth-api/test-post'
+  defaults:
+    _title: 'Test Post'
+    _controller: '\Drupal\jwt_auth_api\Controller\JwtAuthApiController:posttest'
+  requirements:
+    _access: 'TRUE'
+
+jwt_auth_api.test.get:
+  path: '/jwt-auth-api/test-get'
+  defaults:
+    _title: 'Test Post'
+    _controller: '\Drupal\jwt_auth_api\Controller\JwtAuthApiController:gettest'
+  requirements:
+    _access: 'TRUE'
+

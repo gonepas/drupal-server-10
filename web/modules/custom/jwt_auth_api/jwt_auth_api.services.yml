@@ -1,0 +1,10 @@
+services:
+  jwt_auth_api.auth_service:
+    class: Drupal\jwt_auth_api\Service\JwtAuthService
+    arguments: ['@entity_type.manager', '@password', '@jwt.authentication.jwt', '@jwt.transcoder', '@datetime.time']
+
+  jwt_auth_api.authentication.jwt_auth_api:
+    class: Drupal\jwt_auth_api\Authentication\Provider\JwtAuthApiProvider
+    arguments: [ '@entity_type.manager', '@service_container' ]
+    tags:
+      - { name: authentication_provider, provider_id: 'jwt_auth_api', priority: 300 }

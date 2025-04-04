@@ -128,3 +128,7 @@ web/themes/custom/clinkz_theme/build/
 .sass-cache/
 *.css.map
 *.js.map
+
+#Private keys
+private
+OauthKeys

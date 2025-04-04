@@ -1,0 +1,10 @@
+name: 'JWT Auth API'
+type: module
+description: 'Provides JWT authentication for API access'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - consumers:consumers
+  - jwt:jwt
+  - key:key
+  - simple_oauth:simple_oauth
