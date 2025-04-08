@@ -22,6 +22,7 @@
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
         "drupal/core-recommended": "^10.3",
+        "drupal/devel": "^5.3",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/jwt": "^2.2",
@@ -29,8 +30,7 @@
         "drupal/radix": "6.0.x-dev@dev",
         "drupal/simple_oauth": "^6.0",
         "drupal/webform": "^6.2",
-        "drush/drush": "^12.5",
-        "ext-http": "*"
+        "drush/drush": "^12.5"
     },
     "conflict": {
         "drupal/drupal": "*"
