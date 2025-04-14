@@ -1,0 +1,11 @@
+uuid: 7ddbae17-c300-49ce-bb5a-8cbc662c2d7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lotties_json_file
+id: node.lotties_json_file
+target_entity_type_id: node
+target_bundle: lotties_json_file
+default_langcode: site_default
+language_alterable: false

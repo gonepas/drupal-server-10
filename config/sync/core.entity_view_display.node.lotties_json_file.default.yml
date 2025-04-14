@@ -1,0 +1,30 @@
+uuid: 9469838a-4100-4b2e-8ab7-3b1fe4b8f5bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lotties_json_file.field_file_content
+    - node.type.lotties_json_file
+  module:
+    - file
+    - user
+id: node.lotties_json_file.default
+targetEntityType: node
+bundle: lotties_json_file
+mode: default
+content:
+  field_file_content:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

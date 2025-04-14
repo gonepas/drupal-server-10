@@ -1,0 +1,27 @@
+uuid: c3e26507-e8cd-4621-848c-43253de2ae11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_content
+    - node.type.lotties_json_file
+  module:
+    - file
+id: node.lotties_json_file.field_file_content
+field_name: field_file_content
+entity_type: node
+bundle: lotties_json_file
+label: file-content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'json lottie.json'
+  max_filesize: '7 MB'
+  description_field: false
+field_type: file

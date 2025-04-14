@@ -1,35 +1,30 @@
-uuid: 2a8f050d-f72d-4350-9e22-834105efbb7a
+uuid: 8234f8b2-2863-44a7-a3ea-ff922d6d3bfa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
-    - node.type.page
+    - field.field.node.lotties_json_file.field_file_content
+    - node.type.lotties_json_file
   module:
+    - file
     - path
-    - text
-_core:
-  default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
-id: node.page.default
+id: node.lotties_json_file.default
 targetEntityType: node
-bundle: page
+bundle: lotties_json_file
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 31
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_file_content:
+    type: file_generic
+    weight: 121
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   langcode:
     type: language_select

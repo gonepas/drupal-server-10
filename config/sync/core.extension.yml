@@ -11,17 +11,20 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  clinkz_custom_functions: 0
   comment: 0
   config: 0
   consumers: 0
   contact: 0
   contextual: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   devel: 0
   devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
@@ -33,6 +36,7 @@ module:
   jwt: 0
   jwt_auth_api: 0
   key: 0
+  language: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
@@ -51,12 +55,15 @@ module:
   simple_oauth: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   toolbar: 0
   update: 0
   user: 0
   views_ui: 0
+  content_translation: 10
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   olivero: 0

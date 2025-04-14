@@ -1,0 +1,23 @@
+uuid: 9c731e4f-4b4c-4dbe-95c9-cae18bc1d708
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lotties_json_file.field_file_content
+    - node.type.lotties_json_file
+  module:
+    - user
+id: node.lotties_json_file.teaser
+targetEntityType: node
+bundle: lotties_json_file
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_file_content: true
+  langcode: true
